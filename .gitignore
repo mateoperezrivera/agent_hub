@@ -1,0 +1,38 @@
+# Virtual environments
+/.env
+/.venv
+/env/
+/venv/
+/ENV/
+
+# Blob storage
+__blobstorage__/
+
+# Azurite files
+__azurite*/
+__azurite*.*
+*.blob
+*.queue
+*.table
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.pytest_cache/
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Logs
+*.log
