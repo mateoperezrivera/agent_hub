@@ -137,7 +137,7 @@ class RealtimeEventHandler:
             await self.realtime_service._send(
                 ResponseCreateEvent(type="response.create")
             )
-            chat_history.add_tool_message(str(result))
+            chat_history.add_assistant_message(str(result))
 
         except Exception as e:
             logger.error(f"Error handling function call: {e}", exc_info=True)

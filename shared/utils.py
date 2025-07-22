@@ -28,7 +28,7 @@ def convert_to_openai_function_format(
         openai_func = {
             "type": "function",
             "name": func["name"],
-            "description": func["description"],
+            "description": func["description"] or "",  # Convert None to empty string
             "parameters": {
                 "type": "object",
                 "properties": {},
@@ -41,7 +41,8 @@ def convert_to_openai_function_format(
             param_name = param["name"]
             param_info = {
                 "type": param["schema_data"]["type"],
-                "description": param["description"],
+                "description": param["description"]
+                or "",  # Convert None to empty string
             }
 
             openai_func["parameters"]["properties"][param_name] = param_info

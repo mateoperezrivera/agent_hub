@@ -1,6 +1,6 @@
 chainlit==2.5.5
 azure-identity==1.21.0
-semantic-kernel[azure,mcp,realtime]==1.33.0
+semantic-kernel[azure,mcp,realtime]==1.34.0
 sounddevice 
 numpy
 pyaudio

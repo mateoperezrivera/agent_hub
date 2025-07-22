@@ -96,15 +96,15 @@ class MessageHandler:
         async for chunk in self.app_context.chat_completion_service.get_streaming_chat_message_contents(
             chat_history=chat_history,
             kernel=self.app_context.kernel,
-            settings=OpenAIChatPromptExecutionSettings()
+            settings=OpenAIChatPromptExecutionSettings(function_choice_behavior="auto",tool_choice="auto")
         ):
             for msg in chunk:
                 if msg.content:
                     await answer.stream_token(msg.content)
 
         # Add assistant response to history
+        
         chat_history.add_assistant_message(answer.content)
-
         # Send final message
         await answer.send()
 
